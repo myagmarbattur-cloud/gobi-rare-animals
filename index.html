@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Говийн Нууц Баатрууд — Ховор амьтдаа хамгаалъя</title>
+<meta name="description" content="Монголын говьд амьдардаг ховор, нэн ховор амьтдын тухай танин мэдэхүйн интерактив сайт.">
+<style>
+:root{--bg:#0b100e;--panel:#111a16;--sand:#d8b477;--cream:#f4ead7;--muted:#a9b0a9;--green:#9fc48d;--line:#26342c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#263c2c 0,transparent 35%),var(--bg);color:var(--cream);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:#0b100ecc;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff0c}
+.navin{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.08em}.brand span{color:var(--sand)}.links{display:flex;gap:24px;color:#c7cec8;font-size:14px}.links a:hover{color:white}
+.hero{min-height:88vh;display:grid;place-items:center;padding:130px 0 80px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;inset:auto -10% -180px;height:380px;background:radial-gradient(ellipse,#b68b4b44,transparent 65%);pointer-events:none}
+.kicker{color:var(--sand);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:12px}.hero h1{font-size:clamp(48px,9vw,104px);line-height:.93;margin:16px 0 24px;max-width:950px;letter-spacing:-.055em}.hero h1 em{font-style:normal;color:var(--green)}.hero p{max-width:680px;color:var(--muted);font-size:18px}.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{padding:13px 19px;border-radius:999px;border:1px solid var(--line);font-weight:800}.btn.primary{background:var(--sand);color:#111;border-color:var(--sand)}.btn:hover{transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:65px}.stat{background:#ffffff06;border:1px solid #ffffff10;border-radius:18px;padding:20px}.stat b{display:block;font-size:28px}.stat small{color:var(--muted)}
+section{padding:95px 0}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:32px}.sectionhead h2{font-size:clamp(32px,5vw,58px);line-height:1;margin:0;letter-spacing:-.04em}.sectionhead p{max-width:470px;color:var(--muted);margin:0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.filter{background:#fff08;border:1px solid var(--line);color:#bfc7c0;padding:9px 14px;border-radius:999px;cursor:pointer}.filter.active,.filter:hover{background:#d8b477;color:#111;border-color:#d8b477}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#152019,#0f1512);border:1px solid var(--line);border-radius:24px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#6d8d70}.animal-art{height:205px;display:grid;place-items:center;font-size:96px;background:linear-gradient(145deg,#243629,#111a15)}.cardbody{padding:22px}.tag{font-size:11px;color:var(--sand);font-weight:900;letter-spacing:.12em}.card h3{font-size:25px;margin:7px 0}.card p{color:var(--muted);font-size:14px}.facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.pill{font-size:11px;padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:#c7cec8}
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}.bigquote{font-size:clamp(34px,5vw,62px);line-height:1.05;letter-spacing:-.045em;margin:18px 0}.storybox{border:1px solid var(--line);border-radius:28px;padding:32px;background:linear-gradient(135deg,#18231c,#0d1310)}.storybox h3{margin-top:0}.storybox li{margin:13px 0;color:#bec6bf}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.action{padding:24px;border:1px solid var(--line);border-radius:20px;background:#ffffff05}.num{font-size:13px;color:var(--sand);font-weight:900}.action h3{margin:10px 0 6px}.action p{color:var(--muted);font-size:14px}
+footer{padding:45px 0;border-top:1px solid var(--line);color:#87918a;font-size:13px}.footerin{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.story{grid-template-columns:1fr}.actions{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stats,.grid,.actions{grid-template-columns:1fr}.hero{min-height:82vh}.hero h1{font-size:54px}.sectionhead{display:block}.sectionhead p{margin-top:16px}.animal-art{height:180px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap navin"><a class="brand" href="#"><span>ГОБИ</span> • НУУЦ БААТРУУД</a><div class="links"><a href="#animals">Амьтад</a><a href="#why">Яагаад?</a><a href="#protect">Хамгаалъя</a></div></div></nav>
+
+<header class="hero"><div class="wrap">
+<div class="kicker">Монголын говь • Байгаль хамгаалал</div>
+<h1>Говийн <em>жинхэнэ</em> баатрууд.</h1>
+<p>Хатуу ширүүн уур амьсгалд амьд үлдэж, дэлхийд ховордож буй амьтдын өлгий болсон Монголын говийг илүү сайн таньцгаая.</p>
+<div class="cta"><a class="btn primary" href="#animals">Амьтдыг таних →</a><a class="btn" href="#protect">Хамгаалах санаа</a></div>
+<div class="stats"><div class="stat"><b>6+</b><small>Говийн онцгой амьтан</small></div><div class="stat"><b>∞</b><small>Байгальд өгөх үнэ цэнэ</small></div><div class="stat"><b>1</b><small>Бидний хамгаалах Говь</small></div></div>
+</div></header>
+
+<section id="animals"><div class="wrap">
+<div class="sectionhead"><h2>Говийн ховорхон<br>оршин суугчид.</h2><p>Доорх амьтдыг судлаарай. Зарим нь нэн ховор, зарим нь ховордлын дарамтад орсон бөгөөд бүгд Говийн экосистемд чухал үүрэгтэй.</p></div>
+<div class="filters"><button class="filter active" data-filter="all">Бүгд</button><button class="filter" data-filter="rare">Ховор</button><button class="filter" data-filter="desert">Цөлийн мэргэжилтэн</button></div>
+<div class="grid">
+<article class="card animal" data-type="rare desert"><div class="animal-art">🐪</div><div class="cardbody"><div class="tag">НЭН ХОВОР</div><h3>Хавтгай</h3><p>Зэрлэг хоёр бөхт тэмээ. Ус багатай, температурын эрс тэс нөхцөлд гайхалтай зохицсон.</p><div class="facts"><span class="pill">Зэрлэг тэмээ</span><span class="pill">Говь</span></div></div></article>
+<article class="card animal" data-type="rare"><div class="animal-art">🐻</div><div class="cardbody"><div class="tag">НЭН ХОВОР</div><h3>Мазаалай</h3><p>Зөвхөн Монголын Их Говийн дархан цаазат нутагт тохиолддог говийн өвөрмөц баавгай.</p><div class="facts"><span class="pill">Их Говь</span><span class="pill">Баавгай</span></div></div></article>
+<article class="card animal" data-type="rare desert"><div class="animal-art">🦁</div><div class="cardbody"><div class="tag">ХОВОР</div><h3>Говийн ирвэс</h3><p>Цөлийн хад чулуурхаг орчинд амьдрах, маш нуугдмал зан авиртай махчин амьтан.</p><div class="facts"><span class="pill">Махчин</span><span class="pill">Уулс</span></div></div></article>
+<article class="card animal" data-type="desert"><div class="animal-art">🦌</div><div class="cardbody"><div class="tag">ХАМГААЛАХ ШААРДЛАГАТАЙ</div><h3>Хулан</h3><p>Говийн өргөн уудам талд сүргээрээ нүүдэллэдэг зэрлэг адууны төрөл.</p><div class="facts"><span class="pill">Нүүдэлчин</span><span class="pill">Тал хээр</span></div></div></article>
+<article class="card animal" data-type="rare desert"><div class="animal-art">🦅</div><div class="cardbody"><div class="tag">ХОВОР</div><h3>Алтайн бүргэд</h3><p>Говийн уулс, хадан цохионы орчинд дээгүүр дүүлэн ан хийдэг хүчирхэг махчин шувуу.</p><div class="facts"><span class="pill">Махчин шувуу</span><span class="pill">Уулс</span></div></div></article>
+<article class="card animal" data-type="desert"><div class="animal-art">🦊</div><div class="cardbody"><div class="tag">ГОВИЙН ОРШИН СУУГЧ</div><h3>Мануул</h3><p>Чулуурхаг, хуурай орчинд дасан зохицсон жижиг зэрлэг муур. Маш болгоомжтой амьтан.</p><div class="facts"><span class="pill">Зэрлэг муур</span><span class="pill">Чулуурхаг</span></div></div></article>
+</div></div></section>
+
+<section id="why"><div class="wrap story">
+<div><div class="kicker">ЯАГААД ЧУХАЛ ВЭ?</div><div class="bigquote">Нэг амьтан алга болох нь зөвхөн нэг төрөл алга болохоос илүү.</div><p style="color:var(--muted)">Амьтад нь хоол тэжээлийн сүлжээ, үрийн тархалт, бэлчээрийн тэнцвэр зэрэг экосистемийн олон холбоосыг бүрдүүлдэг. Говийг хамгаална гэдэг тэр бүх холбоосыг хамгаална гэсэн үг.</p></div>
+<div class="storybox"><h3>Говь бол зүгээр нэг “хоосон” газар биш.</h3><ul><li>Уур амьсгалын эрс тэс нөхцөлд дасан зохицсон өвөрмөц амьдралтай.</li><li>Нүүдэллэдэг амьтдад асар том амьдрах орон зай хэрэгтэй.</li><li>Ус, бэлчээр, хүний үйл ажиллагааны зөв тэнцвэр чухал.</li><li>Байгаль хамгаалал бол зөвхөн мэргэжилтнүүдийн ажил биш.</li></ul></div>
+</div></section>
+
+<section id="protect"><div class="wrap">
+<div class="sectionhead"><h2>Бид юу хийж<br>чадах вэ?</h2><p>Жижиг үйлдэл олон хүнээр давтагдвал бодит өөрчлөлт болно.</p></div>
+<div class="actions">
+<div class="action"><div class="num">01</div><h3>Хоггүй аялал</h3><p>Говьд аялсан бол хогоо авч буц. Зэрлэг амьтдын амьдрах орчныг цэвэр байлга.</p></div>
+<div class="action"><div class="num">02</div><h3>Амьтдыг бүү үргээ</h3><p>Зэрлэг амьтдыг ойроос хөөж зураг авах, тэжээхээс зайлсхий.</p></div>
+<div class="action"><div class="num">03</div><h3>Зөв мэдээлэл түгээ</h3><p>Ховор амьтдын тухай баталгаатай мэдээллийг найз нөхөдтэйгөө хуваалц.</p></div>
+<div class="action"><div class="num">04</div><h3>Говийг хайрла</h3><p>Байгаль хамгаалах байгууллага, судалгааны ажлыг дэмжиж оролцох боломж хай.</p></div>
+</div></div></section>
+
+<footer><div class="wrap footerin"><span>ГОБИ • НУУЦ БААТРУУД</span><span>Байгалиа хамгаалъя • Ирээдүйгээ хамгаалъя</span></div></footer>
+<script>
+const buttons=[...document.querySelectorAll('.filter')],cards=[...document.querySelectorAll('.animal')];
+buttons.forEach(btn=>btn.onclick=()=>{buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;cards.forEach(c=>c.style.display=f==='all'||c.dataset.type.includes(f)?'block':'none')});
+</script>
+</body></html>
